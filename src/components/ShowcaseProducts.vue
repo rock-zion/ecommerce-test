@@ -29,4 +29,11 @@
     row-gap: 30px;
     margin-bottom: 100px;
   }
+
+  @media screen and (max-width: 600px) {
+    .showcase-products {
+      grid-template-columns: 1fr;
+      padding: 0 16px;
+    }
+  }
 </style>

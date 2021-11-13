@@ -87,6 +87,9 @@
     grid-template-columns: auto 1fr 1fr 1fr;
     align-items: center;
     column-gap: 24px;
+    background: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 16px
   }
   .product-detail {
     margin-bottom: 24px;
@@ -125,5 +128,11 @@
 
   .trash-icon {
     margin-left: 10px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .product-detail-wrapper {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

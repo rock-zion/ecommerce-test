@@ -127,4 +127,10 @@
     cursor: pointer;
     margin-top: 20px;
   }
+
+  @media screen and (max-width: 600px) {
+    .merch-img-wrapper {
+      width: 100%;
+    }
+  }
 </style>

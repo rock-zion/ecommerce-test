@@ -39,4 +39,11 @@
     grid-template-columns: 1fr 400px;
     column-gap: 30px;
   }
+
+  @media screen and (max-width: 600px) {
+    .checkout-summary-wrapper {
+      grid-template-columns: 1fr;
+      row-gap: 30px;
+    }
+  }
 </style>

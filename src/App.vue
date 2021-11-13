@@ -78,4 +78,19 @@
     align-items: center;
     padding: 0 12px;
   }
+
+  @media screen and (max-width: 600px) {
+    .container {
+      padding: 60px 16px;
+    }
+
+    .container-title {
+      margin-bottom: 14px;
+    }
+
+    .container-title-wrapper {
+      flex-direction: column;
+      margin-bottom: 24px;
+    }
+  }
 </style>

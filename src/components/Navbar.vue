@@ -46,4 +46,10 @@
   .link:hover {
     border-bottom: 1px solid #fc6435;
   }
+
+  @media screen and (max-width: 600px) {
+    nav {
+      padding: 0 16px;
+    }
+  }
 </style>

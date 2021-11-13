@@ -46,4 +46,11 @@
     text-align: center;
     border-bottom: 1px solid #fc6435;
   }
+
+  @media screen and (max-width: 600px) {
+    .header {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+  }
 </style>

@@ -100,4 +100,20 @@
   .show-flier-wrapper:hover .visit-event {
     opacity: 1;
   }
+
+  @media screen and (max-width: 600px) {
+    .cta {
+      top: 100px;
+      width: 100%;
+      left: 0;
+      right: 0;
+      font-size: 42px;
+      line-height: 50px;
+      padding: 16px
+    }
+
+    .show-flier-wrapper .visit-event {
+      opacity: 1;
+    }
+  }
 </style>
