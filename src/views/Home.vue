@@ -53,4 +53,10 @@
       margin-bottom: 40px;
     }
   }
+
+  @media screen and (max-width: 1200px) {
+    .header {
+      font-size: 40px;
+    }
+  }
 </style>

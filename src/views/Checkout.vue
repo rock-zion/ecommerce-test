@@ -46,4 +46,11 @@
       row-gap: 30px;
     }
   }
+
+  @media screen and (max-width: 1200px) {
+    .checkout-summary-wrapper {
+      grid-template-columns: 1fr;
+      row-gap: 30px;
+    }
+  }
 </style>

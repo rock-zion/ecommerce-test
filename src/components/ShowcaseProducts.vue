@@ -36,4 +36,12 @@
       padding: 0 16px;
     }
   }
+
+    @media screen and (max-width: 1200px) {
+      .showcase-products {
+        padding: 0;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 24px;
+      }
+    }
 </style>

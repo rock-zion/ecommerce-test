@@ -4,6 +4,7 @@ export const moduleCart = {
   state: () => ({
     cart: [],
     total: 0,
+    loading: false,
   }),
   mutations: {
     fetchCart(state, data) {
@@ -35,11 +36,13 @@ export const moduleCart = {
 
     removeFromCart(context, id) {
       const { commit } = context;
-      axios.delete(`https://ecommerce-test-server.herokuapp.com/cart/${id}`).then(res => {
-        if (res.status === 200) {
-          commit('removeFromCart', id);
-        }
-      });
+      axios
+        .delete(`https://ecommerce-test-server.herokuapp.com/cart/${id}`)
+        .then(res => {
+          if (res.status === 200) {
+            commit('removeFromCart', id);
+          }
+        });
     },
 
     updateItemQuantity(context, value) {
@@ -48,14 +51,17 @@ export const moduleCart = {
       const { subtotal, quantity, cart_item } = value;
       console.log('subtotal', subtotal);
       axios
-        .patch(`https://ecommerce-test-server.herokuapp.com/cart/${cart_item.id}`, {
-          ...cart_item,
-          orderDefaults: {
-            ...cart_item.orderDefaults,
-            quantity,
-            subtotal: quantity * cart_item.orderDefaults.price,
-          },
-        })
+        .patch(
+          `https://ecommerce-test-server.herokuapp.com/cart/${cart_item.id}`,
+          {
+            ...cart_item,
+            orderDefaults: {
+              ...cart_item.orderDefaults,
+              quantity,
+              subtotal: quantity * cart_item.orderDefaults.price,
+            },
+          }
+        )
         .then(res => {
           dispatch('fetchCart');
         });
@@ -70,7 +76,10 @@ export const moduleCart = {
         subtotal: item.item.price * 1,
       };
       axios
-        .post('https://ecommerce-test-server.herokuapp.com/cart', { item: item.item, orderDefaults })
+        .post('https://ecommerce-test-server.herokuapp.com/cart', {
+          item: item.item,
+          orderDefaults,
+        })
         .then(res => {
           dispatch('fetchCart');
           alert('Item added to cart');
