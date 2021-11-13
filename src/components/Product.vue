@@ -17,7 +17,7 @@
     <span class="merch-name">{{ merch_detail.item_name }}</span>
     <span> NGN {{ merch_detail.price }} </span>
     <span>
-      <span
+      <span v-if="typeof merch_detail.item_sizes !== 'string'"
         >Select Size:
         <select @change="updateSize">
           <option value="">Pick Size</option>
@@ -25,7 +25,7 @@
             {{ value }}
           </option>
         </select></span
-      >
+      ><span v-else>Size: One Size</span>
     </span>
     <button @click="addItemToCart" class="add-to-cart">Add Item To Cart</button>
   </div>
@@ -58,16 +58,22 @@
       },
 
       addItemToCart() {
-        if (this.size === '') {
-          alert('Please select size');
-        } else {
+        if (this.size !== '') {
           this.$store.dispatch('addItemToCart', {
             item: this.merch_detail,
             size: this.size,
           });
+        } else {
+          alert('Please select size');
         }
       },
       findItemInCart() {},
+    },
+    mounted() {
+      if (typeof this.merch_detail.item_sizes == 'string') {
+        console.log('zion');
+        this.size = 'One Size';
+      }
     },
     watch: {
       '$store.state.single_merch': function () {},

@@ -1,5 +1,5 @@
 <template>
-  <form @submit="sendOutStuff">
+  <form @submit="formSubmit">
     <h3 class="container-title">Provide your details below</h3>
     <input type="text" placeholder="Your name" />
     <input type="email" placeholder="Your email" />
@@ -17,13 +17,17 @@
 <script>
   export default {
     name: 'CheckoutForm',
+    methods: {
+      formSubmit(e) {
+        e.preventDefault();
+      },
+    },
   };
 </script>
 
 <style scoped>
   input {
     height: 48px;
-    margin-bottom: 24px;
   }
   input,
   textarea {
@@ -32,5 +36,6 @@
     border: 1px solid;
     outline: none;
     padding: 16px;
+    margin-bottom: 24px;
   }
 </style>

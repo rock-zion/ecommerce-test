@@ -71,82 +71,8 @@
     "cta": "Buy our merch and stand a chance to win big",
     "event_flier_image": "https://res.cloudinary.com/helloworld-ng/image/upload/c_scale,f_jpg,w_640/v1635977710/jvurelugxigsmhxcon7x.jpg"
   },
-  "favList": [
-    {
-      "id": 4964,
-      "item_name": "Astro Baseball hat",
-      "item_sizes": [
-        "XL",
-        "L",
-        "S",
-        "XS"
-      ],
-      "product_description": "",
-      "main_image": "https://images.asos-media.com/products/ps-paul-smith-zebra-logo-baseball-cap-in-black/200830323-1-black?$n_640w$&wid=513&fit=constrain",
-      "item_images": [],
-      "is_in_cart": false,
-      "price": 4000
-    },
-    {
-      "id": 4563,
-      "item_name": "Astro Backpack",
-      "item_sizes": "one size",
-      "product_description": "",
-      "main_image": "https://images.asos-media.com/products/the-north-face-vault-backpack-in-gray-black/24250840-1-asphaltgreytingre?$n_640w$&wid=634&fit=constrain",
-      "item_images": [],
-      "is_in_cart": false,
-      "price": 3000
-    }
-  ],
-  "cart": [
-    {
-      "item": {
-        "id": 5653,
-        "item_name": "Astro T-shirt",
-        "item_sizes": [
-          "XL",
-          "L",
-          "S",
-          "XS"
-        ],
-        "product_description": "",
-        "main_image": "https://images.asos-media.com/products/asos-design-ringer-t-shirt-in-gray-with-retro-text-print/200902847-1-asphalt?$n_960w$&wid=952&fit=constrain",
-        "item_images": [],
-        "price": 5000
-      },
-      "orderDefaults": {
-        "quantity": 1,
-        "size": "XL",
-        "price": 5000,
-        "subtotal": 5000
-      },
-      "id": 1
-    },
-    {
-      "item": {
-        "id": 4964,
-        "item_name": "Astro Baseball hat",
-        "item_sizes": [
-          "XL",
-          "L",
-          "S",
-          "XS"
-        ],
-        "product_description": "",
-        "main_image": "https://images.asos-media.com/products/ps-paul-smith-zebra-logo-baseball-cap-in-black/200830323-1-black?$n_640w$&wid=513&fit=constrain",
-        "item_images": [],
-        "is_in_cart": false,
-        "price": 4000
-      },
-      "orderDefaults": {
-        "quantity": 2,
-        "size": "XL",
-        "price": 4000,
-        "subtotal": 8000
-      },
-      "id": 2
-    }
-  ],
+  "favList": [],
+  "cart": [],
   "user_details": {
     "name": "John Doe",
     "email": "johndoe@gmail.com",
