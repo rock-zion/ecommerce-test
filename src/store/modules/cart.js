@@ -28,14 +28,14 @@ export const moduleCart = {
 
   actions: {
     fetchCart({ commit }) {
-      axios('api/cart').then(res => {
+      axios('https://ecommerce-test-server.herokuapp.com/cart').then(res => {
         commit('fetchCart', res.data);
       });
     },
 
     removeFromCart(context, id) {
       const { commit } = context;
-      axios.delete(`api/cart/${id}`).then(res => {
+      axios.delete(`https://ecommerce-test-server.herokuapp.com/cart/${id}`).then(res => {
         if (res.status === 200) {
           commit('removeFromCart', id);
         }
@@ -48,7 +48,7 @@ export const moduleCart = {
       const { subtotal, quantity, cart_item } = value;
       console.log('subtotal', subtotal);
       axios
-        .patch(`api/cart/${cart_item.id}`, {
+        .patch(`https://ecommerce-test-server.herokuapp.com/cart/${cart_item.id}`, {
           ...cart_item,
           orderDefaults: {
             ...cart_item.orderDefaults,
@@ -70,7 +70,7 @@ export const moduleCart = {
         subtotal: item.item.price * 1,
       };
       axios
-        .post('api/cart', { item: item.item, orderDefaults })
+        .post('https://ecommerce-test-server.herokuapp.com/cart', { item: item.item, orderDefaults })
         .then(res => {
           dispatch('fetchCart');
           alert('Item added to cart');

@@ -29,19 +29,23 @@ export const moduleHome = {
   },
   actions: {
     fetchMerch({ commit }) {
-      axios('api/vendor_items').then(res => {
-        commit('fetchMerch', res.data);
-      });
+      axios('https://ecommerce-test-server.herokuapp.com/vendor_items').then(
+        res => {
+          commit('fetchMerch', res.data);
+        }
+      );
     },
 
     fetchVendorDetails({ commit }) {
-      axios('api/vendor_details').then(res => {
-        commit('fetchVendorDetails', res.data);
-      });
+      axios('https://ecommerce-test-server.herokuapp.com/vendor_details').then(
+        res => {
+          commit('fetchVendorDetails', res.data);
+        }
+      );
     },
 
     fetchFavLists({ commit }) {
-      axios('api/favList')
+      axios('https://ecommerce-test-server.herokuapp.com/favList')
         .then(res => {
           commit('fetchFavLists', res.data);
           // if(res.data )
@@ -52,17 +56,21 @@ export const moduleHome = {
     removeFromFavList(context, item) {
       const { commit } = context;
       // commit('removeFromFavList', item.id);
-      axios.delete(`api/favList/${item.id}`).then(res => {
-        if (res.status === 200) {
-          commit('removeFromFavList', item.id);
-        }
-      });
+      axios
+        .delete(
+          `https://ecommerce-test-server.herokuapp.com/favList/${item.id}`
+        )
+        .then(res => {
+          if (res.status === 200) {
+            commit('removeFromFavList', item.id);
+          }
+        });
     },
 
     addToFavList(context, item) {
       const { dispatch } = context;
       axios
-        .post('api/favList', {
+        .post('https://ecommerce-test-server.herokuapp.com/favList', {
           ...item,
         })
         .then(res => {
