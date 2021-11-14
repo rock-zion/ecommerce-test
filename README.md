@@ -6,11 +6,6 @@
 yarn install
 ```
 
-### Startup mock server
-
-```
-yarn json
-```
 
 ### Compiles and hot-reloads for development
 
